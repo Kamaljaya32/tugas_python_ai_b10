@@ -20,3 +20,33 @@ def rata2(angka: list[float]) -> float:
 
     return round(hasil, 2) # return hasil rata2 dengan 2 angka dibelakang koma
 
+# membuat class untuk student -> menyimpan data mahasiswa
+class Student:
+    def __init__(self, nama: str, nim: str, nilai: list[float] = None): # method __init__ akan dipanggil saat objek di buat
+        self.nama = nama # nama mahasiswa
+        self.nim = nim # nim mahasiswa
+
+        # jika nilai tidak diisi, maka akan buat list kosong
+        if nilai is None:
+            self.nilai = []
+        else:
+            self.nilai = nilai
+    
+    # method untuk menambahkan satu nilai ke dalam list nilai
+    def tambah_nilai(self, skor: float):
+        self.nilai.append(skor)
+
+    # menthod untuk menghitung nilai rata2 mahasiswa
+    def rata_nilai(self) -> float:
+        return rata2(self.nilai) # menggunakan fungsi rata2 yg sdh dibuat di atas
+    
+    # menthod untuk menentukan status kelulusan
+    def status(self, threshold: float = 70.0) -> str:
+        if self.rata_nilai() >= threshold:
+            return "LULUS"
+        else:
+            return "TIDAK LULUS"
+    
+    # method __str__ digunakan untuk objek mahasiswa bisa dicetak dengan print
+    def __str__(self):
+        return f"Student(nama:'{self.nama}', nim:'{self.nim}', rata:{self.rata_nilai()}, status:{self.status()})"
