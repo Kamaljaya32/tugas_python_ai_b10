@@ -20,6 +20,8 @@ def rata2(angka: list[float]) -> float:
 
     return round(hasil, 2) # return hasil rata2 dengan 2 angka dibelakang koma
 
+# 2. Class
+
 # membuat class untuk student -> menyimpan data mahasiswa
 class Student:
     def __init__(self, nama: str, nim: str, nilai: list[float] = None): # method __init__ akan dipanggil saat objek di buat
@@ -50,3 +52,45 @@ class Student:
     # method __str__ digunakan untuk objek mahasiswa bisa dicetak dengan print
     def __str__(self):
         return f"Student(nama:'{self.nama}', nim:'{self.nim}', rata:{self.rata_nilai()}, status:{self.status()})"
+    
+# 3. Demo
+
+if __name__ == "__main__":
+    print("=== FUNCTIONS ===")
+
+    # memanggil fungsi greet
+    print(greet("Arifian"))
+
+    # memanggil fungsi tambah
+    print("tambah(5, 7) =", tambah(5,7))
+    print("tambah(10) =", tambah(10))
+
+    # memanggil fungsi rata2
+    print("rata2([80, 90, 100]) =", rata2([80, 90, 100]))
+    print("rata([]) =", rata2([]))
+
+    print("\n=== CLASS STUDENT ===")
+
+    # membuat objek mahasiswa 1
+    mahasiswa1 = Student("Asep", "A123")
+    mahasiswa1.tambah_nilai(80)
+    mahasiswa1.tambah_nilai(85)
+    mahasiswa1.tambah_nilai(90)
+
+    # membuat objek mahasiswa 2
+    mahasiswa2 = Student("Budi", "B123")
+    mahasiswa2.tambah_nilai(60)
+    mahasiswa2.tambah_nilai(70)
+    mahasiswa2.tambah_nilai(65)
+
+    # print mahassiswa 1
+    print(mahasiswa1)
+    print("Rata-rata:", mahasiswa1.rata_nilai())
+    print("Status:", mahasiswa1.status())
+
+    print()
+
+    # print mahasiswa 2
+    print(mahasiswa2)
+    print("Rata-rata:", mahasiswa2.rata_nilai())
+    print("Status:", mahasiswa2.status())
