@@ -8,7 +8,7 @@ np.random.seed(42)
 
 # membuat class GradeBook agar dapat mengelola data nilai mahasiswa
 class GradeBook:
-    def __int__(self, df: pd.DataFrame):
+    def __init__(self, df: pd.DataFrame):
         self.df = df # df _> dataframe untuk menyimpan data mahasiswa
 
     # method untuk menghitung rata2 nilai dari kolom "nilai"
@@ -117,13 +117,13 @@ if __name__ == "__main__":
     print(gb)
 
     # menampilkan rata-rata nilai
-    print("Average:", gb.average())
+    print("Rata-rata:", gb.rata2())
 
     # menampilkan persentase kelulusan
-    print("Pass rate:", gb.pass_rate(), "%")
+    print("Persentase Kelulusan", gb.lulus(), "%")
 
     # menyimpan ringkasan tambahan dari class gradebook ke file yang sama
-    gb.save_summary(nama_file)
+    gb.ringkasan(nama_file)
 
     # menampilkan lokasi file ringkasan
     print(f"Ringkasan berhasil disimpan ke file: {os.path.abspath(nama_file)}")

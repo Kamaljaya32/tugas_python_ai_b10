@@ -1,0 +1,19 @@
+=== RINGKASAN STATISTIK NUMPY ===
+Nilai ujian        : [88, 78, 64, 92, 57, 70, 88, 68, 72, 60]
+Rata-rata          : 73.7
+Median             : 71.0
+Standar deviasi    : 11.71
+Nilai minimum      : 57
+Nilai maksimum     : 92
+
+=== RINGKASAN DATAFRAME ===
+Jumlah baris       : 5
+Jumlah lulus       : 3
+Jumlah tidak lulus : 2
+
+=== RINGKASAN DARI CLASS GRADEBOOK ===
+Jumlah data        : 5
+Rata-rata nilai    : 75.8
+Persentase lulus   : 60.0%
+Jumlah lulus       : 3
+Jumlah tidak lulus : 2
